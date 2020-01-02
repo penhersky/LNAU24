@@ -1,13 +1,20 @@
 import React from "react";
 import {ApolloProvider} from "@apollo/react-hooks";
+import {Switch, Route} from "react-router-dom";
 import "./App.scss";
 
 import {client} from "./client";
 
+import {Auth} from "./components";
+
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
-      <div className="App"></div>
+      <div className="App">
+        <Switch>
+          <Route path="/api" component={Auth} />
+        </Switch>
+      </div>
     </ApolloProvider>
   );
 };

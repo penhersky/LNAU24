@@ -49,8 +49,8 @@
     ]
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/react-redux": "^7.1.5",
-    "@types/react-router-dom": "^5.1.3",
-    "@types/uikit": "^2.27.7"
+    "@types/react-router-dom": "^5.1.3"
   }
 }
