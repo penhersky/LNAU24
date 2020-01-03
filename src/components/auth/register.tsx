@@ -9,6 +9,8 @@ export default (props: any) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [inputError, setInputError] = useState("");
   const [resultQuery, setResultQuery] = useState({error: "", message: ""});
   const [registration, {data, loading}] = useMutation(REGISTRATION);
@@ -16,10 +18,25 @@ export default (props: any) => {
   const onChangeName = (e: any) => setName(e.target.value);
   const onChangeSurname = (e: any) => setSurname(e.target.value);
   const onChangeEmail = (e: any) => setEmail(e.target.value);
+  const onChangePassword = (e: any) => setPassword(e.target.value);
+  const onChangeConfirmPassword = (e: any) =>
+    setConfirmPassword(e.target.value);
 
   const subminForm = (e: any) => {
     e.preventDefault();
-    registration({variables: {surname, name, email}});
+    if (surname && name && email && password && confirmPassword) {
+      if (password === confirmPassword) {
+        console.log(password);
+        registration({variables: {surname, name, email, password}});
+      } else {
+        setResultQuery({
+          error: "Паролі повинні співпадати!",
+          message: ""
+        });
+        setConfirmPassword("");
+        setInputError("confirmPassword");
+      }
+    }
   };
 
   useEffect(() => {
@@ -32,6 +49,8 @@ export default (props: any) => {
       setName("");
       setSurname("");
       setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     }
   }, [data]);
   return (
@@ -41,6 +60,7 @@ export default (props: any) => {
           className="uk-card uk-card-default uk-card-body uk-animation-scale-up"
           onSubmit={subminForm}
         >
+          {loading ? <div uk-spinner="ratio: 1"></div> : ""}
           <p> Cтворіть свій обліковий запис </p>
           <p style={{color: "red"}}>
             {resultQuery.error ? resultQuery.error : ""}
@@ -86,10 +106,40 @@ export default (props: any) => {
                   "uk-input",
                   inputError === "email" ? "uk-form-danger" : ""
                 )}
-                type="text"
+                type="email"
                 placeholder="Email"
                 value={email}
                 onChange={onChangeEmail}
+              />
+            </div>
+          </div>
+          <div className="uk-margin">
+            <div className="uk-inline uk-width-1-1@m">
+              <span className="uk-form-icon" uk-icon="icon: lock"></span>
+              <input
+                className={classNames(
+                  "uk-input",
+                  inputError === "password" ? "uk-form-danger" : ""
+                )}
+                type="password"
+                placeholder="Пароль"
+                value={password}
+                onChange={onChangePassword}
+              />
+            </div>
+          </div>
+          <div className="uk-margin">
+            <div className="uk-inline uk-width-1-1@m">
+              <span className="uk-form-icon" uk-icon="icon: lock"></span>
+              <input
+                className={classNames(
+                  "uk-input",
+                  inputError === "confirmPassword" ? "uk-form-danger" : ""
+                )}
+                type="password"
+                placeholder="Повторіть пароль!"
+                value={confirmPassword}
+                onChange={onChangeConfirmPassword}
               />
             </div>
           </div>
@@ -113,10 +163,16 @@ export default (props: any) => {
           <img src="/images/LNAU.jpg" alt="" />
           <h2>LNAU24</h2>
           <p>
-            Идейные соображения высшего порядка, а также начало повседневной
-            работы по формированию позиции позволяет выполнять важные задания по
-            разработке дальнейших направлений развития.{" "}
+            LBAU24 це opensource проект створений для поширення інформації серед
+            студентів та викладачів.
           </p>
+          <p>Ми активно розвиваємося і приймаємо будь які ідеї та критику!</p>{" "}
+          <a
+            className="uk-link-muted"
+            href="https://web.telegram.org/#/im?p=@LNAU24support"
+          >
+            <p>Тут ви можете залишати ваші пропозиції</p>
+          </a>
         </div>
       </div>
     </div>

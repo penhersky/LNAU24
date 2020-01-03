@@ -2,8 +2,8 @@
 
 .auth {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 100px;
+  grid-template-columns: 4fr 6fr;
+  margin-top: 70px;
   .form-box {
     justify-items: center;
     justify-self: center;
@@ -13,6 +13,7 @@
     display: grid;
     padding-right: 10px;
     padding-left: 10px;
+    margin-top: 40px;
     .content-auth {
       justify-items: center;
       justify-self: center;
