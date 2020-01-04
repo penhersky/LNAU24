@@ -18,3 +18,12 @@ export const REGISTRATION = gql`
     }
   }
 `;
+
+export const FINISH_REGISTRATION = gql`
+  mutation($id: Int!, $key: String!) {
+    finishRegister(id: $id, key: $key) {
+      message
+      error
+    }
+  }
+`;

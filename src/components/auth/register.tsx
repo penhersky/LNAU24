@@ -26,7 +26,6 @@ export default (props: any) => {
     e.preventDefault();
     if (surname && name && email && password && confirmPassword) {
       if (password === confirmPassword) {
-        console.log(password);
         registration({variables: {surname, name, email, password}});
       } else {
         setResultQuery({

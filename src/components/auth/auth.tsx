@@ -8,7 +8,7 @@ export default (props: any) => {
     <Switch>
       <Route path="/api/register" component={REGISTER} />
       <Route
-        path="/api/finishRegistration/:user"
+        path="/api/finishRegistration/:params"
         component={FinishRegistration}
       />
     </Switch>
