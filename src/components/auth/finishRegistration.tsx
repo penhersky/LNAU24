@@ -8,14 +8,11 @@ import "./finishRegistration.scss";
 export default (props: any) => {
   const [finishRegister, {data, loading}] = useMutation(FINISH_REGISTRATION);
   const [result, setResult] = useState({error: "", message: ""});
-  const [_id, setId] = useState(0);
   const paramsString = props.match.params.params;
   useEffect(() => {
     const searchParams = new URLSearchParams(paramsString);
     const key = searchParams.get("key");
-    const id = searchParams.get("id");
-    setId(Number(id));
-    finishRegister({variables: {id: Number(id), key: key?.toString()}});
+    finishRegister({variables: {key: key?.toString()}});
   }, [finishRegister, paramsString]);
   useEffect(() => {
     if (data) {
@@ -34,10 +31,6 @@ export default (props: any) => {
             Тепер ви можете перейти на{" "}
             <NavLink to="/api/login" className="uk-link-muted">
               сторінку авторизації
-            </NavLink>{" "}
-            або переглянути свій{" "}
-            <NavLink to={"/user/" + _id} className="uk-link-muted">
-              профіль
             </NavLink>
             !
           </p>
@@ -50,7 +43,7 @@ export default (props: any) => {
         <p>
           Якщо ключ підтвердження не правильний або його термін дії вийшов!
           Проведіть будь-ласка повторну{" "}
-          <NavLink to={"/user/" + _id} className="uk-link-muted">
+          <NavLink to={"/api/restration"} className="uk-link-muted">
             реєстрацію
           </NavLink>{" "}
           для отримання нового посилання!

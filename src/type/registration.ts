@@ -20,8 +20,8 @@ export const REGISTRATION = gql`
 `;
 
 export const FINISH_REGISTRATION = gql`
-  mutation($id: Int!, $key: String!) {
-    finishRegister(id: $id, key: $key) {
+  mutation($key: String!) {
+    finishRegister(key: $key) {
       message
       error
     }

@@ -1,0 +1,1 @@
+export const SET_HEADER_USER_DATA = "SET_HEADER_USER_DATA";

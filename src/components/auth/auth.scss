@@ -32,7 +32,36 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+.login {
+  margin-top: 70px;
+  .form-box-login {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .information-login {
+    padding-top: 50px;
+    text-align: center;
+    .img-login {
+      width: 480px;
+    }
+    .stores {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 50px;
+      a {
+        img {
+          height: 80px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
   .auth {
     display: grid;
     grid-template-columns: 1fr;
