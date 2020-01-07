@@ -29,12 +29,12 @@ export default (props: any) => {
       if (data.login.error) {
         const error = data.login.error.split('"');
         setInputError(error[1]);
-        setResultQuery({message: data.login.message, error: error[2]});
+        setResultQuery({message: "", error: error[2]});
       }
+      setResultQuery({message: data.login.message, error: ""});
       sessionStorage.setItem("mainToken", data.login.mainToken);
       sessionStorage.setItem("weeklyToken", data.login.weeklyToken);
       sessionStorage.setItem("dayToken", data.login.dayToken);
-      localStorage.setItem("userId", data.login.user.id);
     }
   }, [data]);
 

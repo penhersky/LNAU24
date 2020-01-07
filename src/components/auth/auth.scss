@@ -61,6 +61,25 @@
   }
 }
 
+.forgot-password {
+  margin-top: 70px;
+  .form-box-forgot {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+  .information-forgot {
+    .content-auth {
+      padding-top: 30px;
+      .img-forgotPassword {
+        width: 300px;
+      }
+      .img-finish {
+        padding-top: 100px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 840px) {
   .auth {
     display: grid;

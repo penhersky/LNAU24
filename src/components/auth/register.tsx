@@ -39,11 +39,21 @@ export default (props: any) => {
   };
 
   useEffect(() => {
+    setInputError("");
     if (data) {
       if (data.startRegister) {
-        setResultQuery(data.startRegister);
-        if (data.startRegister.error)
-          setInputError(data.startRegister.error.split('"')[1]);
+        if (data.startRegister.error) {
+          const error = data.startRegister.error.split('"');
+          setInputError(error[1]);
+          setResultQuery({
+            message: "",
+            error: error[2]
+          });
+        }
+        setResultQuery({
+          message: data.startRegister.message,
+          error: ""
+        });
       }
       setName("");
       setSurname("");

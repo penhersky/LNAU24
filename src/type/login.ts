@@ -8,9 +8,6 @@ export const LOGIN = gql`
       mainToken
       weeklyToken
       dayToken
-      user {
-        id
-      }
     }
   }
 `;
