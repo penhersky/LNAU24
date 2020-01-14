@@ -5,7 +5,7 @@ import "./App.scss";
 
 import {client} from "./client";
 
-import {Auth} from "./components";
+import {Auth, Home} from "./components";
 
 const App: React.FC = () => {
   return (
@@ -13,6 +13,7 @@ const App: React.FC = () => {
       <div className="App">
         <Switch>
           <Route path="/api" component={Auth} />
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     </ApolloProvider>

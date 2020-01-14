@@ -1,12 +1,20 @@
 $global-primary-background: #389e0d;
 $global-success-background: #a0d911;
 $global-emphasis-color: #092b00;
-$global-color: #092b00;
+$global-color: #082700;
 $global-muted-color: #389e0d;
 $global-border: #399e0d80;
 $global-medium-box-shadow: 0 5px 15px #399e0d6e;
 $global-link-hover-color: #389e0d;
 $global-link-color: #389e0d;
+
+$box-border-shine: linear-gradient(
+  0deg,
+  rgba(56, 158, 13, 0.3158438375350141) 0%,
+  rgba(255, 255, 255, 0) 17%
+);
+
+$navbar-nav-item-height: 60px;
 
 // $lightbox-item-color: rgba(255, 0, 0, 0.7);
 // $dragover-box-shadow: #389e0d;

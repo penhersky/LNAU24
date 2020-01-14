@@ -1,5 +1,5 @@
 import ApolloClient from "apollo-boost";
 
 export const client = new ApolloClient({
-  uri: process.env.SERVER
+  uri: "http://localhost:4000/graphql" // process.env.SERVER
 });

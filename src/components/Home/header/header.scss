@@ -1,0 +1,17 @@
+@import "../../../variables.scss";
+
+ul {
+  li {
+    :hover {
+      transition: 1.2s;
+      background-color: #399e0d77;
+      color: white;
+    }
+  }
+}
+
+.active {
+  color: $global-emphasis-color;
+  background: $box-border-shine;
+  border-bottom: 1px solid $global-emphasis-color;
+}
