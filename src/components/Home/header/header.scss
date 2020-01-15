@@ -15,3 +15,18 @@ ul {
   background: $box-border-shine;
   border-bottom: 1px solid $global-emphasis-color;
 }
+
+@media screen and (min-width: 962px) {
+  .nav-mobile {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 962px) {
+  .nav-desk {
+    display: none;
+  }
+  .nav-mobile {
+    display: contents;
+  }
+}

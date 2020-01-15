@@ -1,0 +1,14 @@
+.data {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-left: 10px;
+  p {
+    margin: 0;
+    color: #1d8d0169;
+    font-size: 12px;
+  }
+  h6 {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+}

@@ -2,7 +2,7 @@
 
 .user {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 2fr 7fr;
   max-width: max($numbers: 250px);
   span {
     width: 50px;
@@ -20,5 +20,4 @@
       font-size: 18px;
     }
   }
-  text-decoration: none;
 }

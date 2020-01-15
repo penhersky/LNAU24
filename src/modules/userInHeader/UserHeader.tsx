@@ -1,15 +1,23 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 import "./userHeader.scss";
 
-export default (props: {name: string; surname: string; status: string}) => {
+export default (props: {
+  id: number;
+  name: string;
+  surname: string;
+  status: string;
+}) => {
   return (
-    <div className="user">
-      <span uk-icon="icon: user; ratio: 2.0"></span>
+    <NavLink to={`/user/${props.id}`} className="user uk-link-toggle">
+      <span uk-icon="icon: user; ratio: 2.0" className="uk-link-heading"></span>
       <div className="data">
-        <h6>{`${props.name.split("")[0].toUpperCase()}. ${props.surname}`}</h6>
+        <h6 className="uk-link-heading">{`${props.name
+          .split("")[0]
+          .toUpperCase()}. ${props.surname}`}</h6>
         <p>{props.status}</p>
       </div>
-    </div>
+    </NavLink>
   );
 };
