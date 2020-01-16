@@ -12,11 +12,7 @@ export default (props: {
 }) => {
   return (
     <div id="offcanvas-nav" uk-offcanvas="mode: reveal; overlay: true">
-      <span
-        uk-icon="icon: close"
-        className="uk-offcanvas-close"
-        uk-close
-      ></span>
+      <span className="uk-offcanvas-close" uk-close="true"></span>
       <div className="uk-offcanvas-bar">
         {props.Authorized ? (
           <NavLink to="api/login">Увійти</NavLink>
