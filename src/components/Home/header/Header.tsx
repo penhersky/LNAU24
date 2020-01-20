@@ -1,19 +1,20 @@
-import React, {useState} from "react";
-// import {useQuery} from "@apollo/react-hooks";
+import React, {useState, useEffect} from "react";
+import {useQuery} from "@apollo/react-hooks";
 import {NavLink} from "react-router-dom";
 
 import {UserHeader, OffCanvas} from "../../../modules";
 
-// import {USER_DATA_NAV_BAR} from "../../../type/authorizedUser";
+import {USER_DATA_NAV_BAR} from "../../../type/authorizedUser";
 
 import "./header.scss";
 
 export default (props: any) => {
   const [notAuthorized, setNotAuthorized] = useState(true);
-  // const {loading, data} = useQuery(USER_DATA_NAV_BAR, {});
-  // useEffect(() => {
-  //   console.log(data, loading);
-  // }, [data, loading]);
+  const {data, loading} = useQuery(USER_DATA_NAV_BAR);
+
+  useEffect(() => {
+    console.log(data, loading);
+  }, [data, loading]);
   return (
     <div>
       <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
