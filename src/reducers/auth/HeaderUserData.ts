@@ -1,11 +1,14 @@
-import {SET_HEADER_USER_DATA} from "../../constants/headerUserData";
+import {
+  SET_HEADER_USER_DATA,
+  GET_HEADER_USER_DATA
+} from "../../constants/headerUserData";
 
-type Register = {
+type HeaderUserData = {
   type: string;
-  id: number;
-  name: string;
-  surname: string;
-  position: string;
+  id?: number;
+  name?: string;
+  surname?: string;
+  position?: string;
 };
 
 type StateType = {
@@ -22,16 +25,22 @@ export const initialState = {
 };
 export const headerUserData = (
   state: StateType = initialState,
-  action: Register
+  action: HeaderUserData
 ) => {
   switch (action.type) {
     case SET_HEADER_USER_DATA:
       return {
-        ...state,
         id: action.id,
         name: action.name,
         surname: action.surname,
         position: action.position
+      };
+    case GET_HEADER_USER_DATA:
+      return {
+        id: state.id,
+        name: state.name,
+        surname: state.surname,
+        position: state.position
       };
     default:
       return state;

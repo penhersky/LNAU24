@@ -15,7 +15,10 @@ export default (props: {
       <span className="uk-offcanvas-close" uk-close="true"></span>
       <div className="uk-offcanvas-bar">
         {props.Authorized ? (
-          <NavLink to="api/login">Увійти</NavLink>
+          <NavLink to="api/login">
+            <span uk-icon="icon: sign-in" className="uk-margin-right"></span>
+            Увійти
+          </NavLink>
         ) : (
           <NavLink to={`/user/${props.id}`} className="uk-link-toggle">
             <div className="data">

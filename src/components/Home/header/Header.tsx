@@ -1,20 +1,42 @@
 import React, {useState, useEffect} from "react";
 import {useQuery} from "@apollo/react-hooks";
 import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 import {UserHeader, OffCanvas} from "../../../modules";
 
 import {USER_DATA_NAV_BAR} from "../../../type/authorizedUser";
+import {SET_HEADER_USER_DATA} from "../../../constants/headerUserData";
 
 import "./header.scss";
 
 export default (props: any) => {
   const [notAuthorized, setNotAuthorized] = useState(true);
-  const {data, loading} = useQuery(USER_DATA_NAV_BAR);
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({
+    id: undefined,
+    name: undefined,
+    surname: undefined,
+    position: undefined
+  });
+  const {data} = useQuery(USER_DATA_NAV_BAR, {
+    context: {headers: {"auth-token": sessionStorage.getItem("mainToken")}}
+  });
 
   useEffect(() => {
-    console.log(data, loading);
-  }, [data, loading]);
+    if (data) {
+      if (data.User.getAuthorizedUser.redirect) {
+        setNotAuthorized(data.User.getAuthorizedUser.redirect);
+      } else {
+        setUser(data.User.getAuthorizedUser);
+        setNotAuthorized(false);
+        dispatch({
+          type: SET_HEADER_USER_DATA,
+          ...data.User.getAuthorizedUser
+        });
+      }
+    }
+  }, [data, dispatch]);
   return (
     <div>
       <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
@@ -33,7 +55,7 @@ export default (props: any) => {
               exact
               to="/"
             >
-              Logo
+              LNAU24
             </NavLink>
           </div>
           <div className="uk-navbar-left uk-margin-large-left">
@@ -59,13 +81,15 @@ export default (props: any) => {
           </div>
           <div className="uk-navbar-right uk-margin-large-right">
             {notAuthorized ? (
-              <NavLink to="api/login">Увійти</NavLink>
+              <NavLink to="api/login">
+                Увійти <span uk-icon="icon: sign-in"></span>
+              </NavLink>
             ) : (
               <UserHeader
-                name="Oleg"
-                surname="lohesvbnmjaklghjklj"
-                status="admin"
-                id={1}
+                name={String(user.name)}
+                surname={String(user.surname)}
+                status={String(user.position)}
+                id={Number(user.id)}
               />
             )}
           </div>
@@ -86,10 +110,10 @@ export default (props: any) => {
         </nav>
       </div>
       <OffCanvas
-        name="Oleg"
-        surname="lohesvbnmjaklghjklj"
-        status="admin"
-        id={1}
+        name={String(user.name)}
+        surname={String(user.surname)}
+        status={String(user.position)}
+        id={Number(user.id)}
         Authorized={notAuthorized}
       />
     </div>

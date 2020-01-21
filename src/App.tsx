@@ -9,7 +9,7 @@ import {Auth, Home} from "./components";
 
 const App: React.FC = () => {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={client} >
       <div className="App">
         <Switch>
           <Route path="/api" component={Auth} />
