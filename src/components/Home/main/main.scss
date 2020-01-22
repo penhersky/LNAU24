@@ -1,0 +1,53 @@
+@import "../../../variables.scss";
+
+.main {
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.301);
+    text-align: center;
+    width: 100%;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    img {
+      justify-items: center;
+      align-items: center;
+    }
+    .text {
+      justify-items: center;
+      align-items: center;
+      h2 {
+        font-size: 30px;
+        color: $global-alternative-color;
+        margin: 5px;
+      }
+      h1 {
+        font-size: 50px;
+        color: $global-alternative-color;
+        margin: 5px;
+      }
+      p {
+        color: $global-alternative-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    .overlay {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    img {
+      width: 100px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
