@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
 import {UserHeader, OffCanvas} from "../../../modules";
+import {Loading} from "../../../fragments";
 
 import {USER_DATA_NAV_BAR} from "../../../type/authorizedUser";
 import {SET_HEADER_USER_DATA} from "../../../constants/headerUserData";
@@ -19,9 +20,7 @@ export default (props: any) => {
     surname: undefined,
     position: undefined
   });
-  const {data} = useQuery(USER_DATA_NAV_BAR, {
-    context: {headers: {"auth-token": sessionStorage.getItem("mainToken")}}
-  });
+  const {data, loading} = useQuery(USER_DATA_NAV_BAR);
 
   useEffect(() => {
     if (data) {
@@ -37,8 +36,10 @@ export default (props: any) => {
       }
     }
   }, [data, dispatch]);
+
   return (
     <div>
+      {loading ? <Loading /> : <></>}
       <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
         <nav
           className="uk-navbar-container uk-navbar-transparent nav-desk"
