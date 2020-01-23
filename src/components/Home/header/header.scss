@@ -8,12 +8,11 @@ ul {
       color: white;
     }
   }
-}
-
-.active {
-  color: $global-emphasis-color;
-  background: $box-border-shine;
-  border-bottom: 1px solid $global-emphasis-color;
+  .active {
+    color: $global-emphasis-color;
+    background: $box-border-shine;
+    border-bottom: 1px solid $global-emphasis-color;
+  }
 }
 
 @media screen and (min-width: 962px) {

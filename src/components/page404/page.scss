@@ -1,0 +1,96 @@
+@import "../../variables.scss";
+
+.page404 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  .pattern {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: animateBg 5s ease-in-out infinite;
+    @keyframes animateBg {
+      0%,
+      100% {
+        transform: scale(1.6) rotate(-15deg);
+      }
+      50% {
+        transform: scale(1.6) rotate(15deg);
+      }
+    }
+    .face {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      background-image: url("./check.jpg");
+      background-size: 100px 100px;
+      animation: animate 1s linear infinite;
+    }
+    @keyframes animate {
+      0% {
+        background-position: 0;
+      }
+      100% {
+        background-position: 100px;
+      }
+    }
+    .face2 {
+      height: 100vh;
+      transform-origin: top;
+      transform: rotateX(70deg);
+    }
+    .face1::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 125px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+    }
+
+    .face2::before {
+      content: "";
+      position: absolute;
+      bottom: top;
+      left: 0;
+      width: 100%;
+      height: 125px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+    }
+  }
+  .text {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.411);
+    h1 {
+      color: $global-alternative-color;
+      font-size: 300px;
+      margin: 10px;
+    }
+    p {
+      color: $global-alternative-color;
+      font-size: 50px;
+      margin: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 962px) {
+  .page404 {
+    .text {
+      h1 {
+        font-size: 200px;
+      }
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+}
