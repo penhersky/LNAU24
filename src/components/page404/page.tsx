@@ -12,6 +12,7 @@ export default (props: any) => {
       </div>
       <div className="uk-overlay uk-position-bottom text">
         <h1>404</h1>
+        <h6>Сторінку не знайдено!</h6>
         <p>OoЙ, Щось пішло не так(</p>
         <NavLink className="uk-button uk-button-secondary" to="/">
           На головгу

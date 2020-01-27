@@ -4,6 +4,11 @@ import {Switch, Route} from "react-router-dom";
 import Header from "./header/Header";
 import Main from "./main/Main";
 
+import AboutUs from "./aboutUs/AboutUs";
+import Entrant from "./entrant/Entrant";
+import Faculties from "./faculties/Faculties";
+import News from "./news/News";
+
 import {ToTop} from "../../fragments";
 import {Page404} from "../";
 
@@ -20,6 +25,46 @@ export default (props: any) => {
             <>
               <Header />
               <Main />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/about-us"
+          component={() => (
+            <>
+              <Header />
+              <AboutUs />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/news"
+          component={() => (
+            <>
+              <Header />
+              <News />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/faculties"
+          component={() => (
+            <>
+              <Header />
+              <Faculties />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/to-the-entrant"
+          component={() => (
+            <>
+              <Header />
+              <Entrant />
             </>
           )}
         />
