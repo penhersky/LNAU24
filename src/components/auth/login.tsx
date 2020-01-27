@@ -47,9 +47,16 @@ export default (props: any) => {
         >
           {loading ? <div uk-spinner="ratio: 1"></div> : ""}
           <h4> Увійти </h4>
-          <p style={{color: "red"}}>
-            {resultQuery.error ? resultQuery.error : ""}
-          </p>
+
+          {resultQuery.error ? (
+            <div className="uk-alert-danger" uk-alert="true">
+              <span className="uk-alert-close" uk-close="true"></span>
+              <p style={{margin: 0}}>{resultQuery.error}</p>
+            </div>
+          ) : (
+            ""
+          )}
+
           {resultQuery.message ? <Redirect to="/" /> : ""}
 
           <div className="uk-margin">

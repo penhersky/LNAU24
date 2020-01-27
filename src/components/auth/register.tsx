@@ -40,6 +40,7 @@ export default (props: any) => {
 
   useEffect(() => {
     setInputError("");
+    setResultQuery({error: "eee", message: "ddd"});
     if (data) {
       if (data.startRegister) {
         if (data.startRegister.error) {
@@ -71,12 +72,22 @@ export default (props: any) => {
         >
           {loading ? <div uk-spinner="ratio: 1"></div> : ""}
           <p> Cтворіть свій обліковий запис </p>
-          <p style={{color: "red"}}>
-            {resultQuery.error ? resultQuery.error : ""}
-          </p>
-          <p style={{color: "green"}}>
-            {resultQuery.message ? resultQuery.message : ""}
-          </p>
+          {resultQuery.error ? (
+            <div className="uk-alert-danger" uk-alert="true">
+              <span className="uk-alert-close" uk-close="true"></span>
+              <p style={{margin: 0}}>{resultQuery.error}</p>
+            </div>
+          ) : (
+            ""
+          )}
+          {resultQuery.message ? (
+            <div className="uk-alert-success" uk-alert="true">
+              <span className="uk-alert-close" uk-close="true"></span>
+              <p style={{margin: 0}}>{resultQuery.message}</p>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="uk-margin">
             <div className="uk-inline  uk-width-1-1@m">
               <span className="uk-form-icon" uk-icon="icon: user"></span>
