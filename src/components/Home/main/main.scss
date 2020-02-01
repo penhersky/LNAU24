@@ -33,6 +33,19 @@
       }
     }
   }
+  .main-blocs {
+    display: grid;
+    justify-self: center;
+    align-items: center;
+    padding-top: 100px;
+    .main-bloc {
+      width: 1000px;
+      display: grid;
+      justify-self: center;
+      align-items: center;
+      padding: 30px;
+    }
+  }
 }
 
 @media screen and (max-width: 640px) {

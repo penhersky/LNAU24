@@ -8,7 +8,7 @@ import {ApolloLink, concat} from "apollo-link";
 import introspectionQueryResultData from "./fragmentTypes.json";
 
 const httpLink = new HttpLink({
-  uri: process.env.SERVER
+  uri: "http://localhost:4000/graphql" //process.env.SERVER
 });
 
 const authMiddleware = new ApolloLink((operation, forward) => {
