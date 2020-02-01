@@ -9,19 +9,46 @@ import "./main.scss";
 export default (props: any) => {
   return (
     <div className="main">
-      <div className="video-box uk-cover-container uk-height-large">
+      <div className="video-box uk-cover-container" style={{height: 700}}>
         <div
-          className="uk-overlay uk-position-cover uk-height-large overlay"
+          className="uk-overlay uk-position-cover overlay"
           style={{
             position: "relative",
-            zIndex: 100
+            zIndex: 100,
+            height: "100%"
           }}
         >
-          <img src="images/logo.png" width="300" alt="" uk-img="true"></img>
-          <div className="text">
-            <h1>Львівський Національний Аграрний Університет</h1>
-            <h2>LNAU24</h2>
-            <p>За підтримки кафедри Інформаційних систем і технологій</p>
+          <div className="main-overlay-content">
+            <img src="images/logo.png" width="300" alt="" uk-img="true"></img>
+            <div className="text">
+              <h1>Львівський Національний Аграрний Університет</h1>
+              <h2>LNAU24</h2>
+              <p>За підтримки кафедри Інформаційних систем і технологій</p>
+            </div>
+          </div>
+          <div className="hat-button">
+            <div className="hat-info">
+              <h3 className="uk-card-title">Заголовок1</h3>
+              <p>
+                Так само постійне інформаційно-пропагандистське забезпечення
+                нашої діяльності в значній мірі обумовлює створення форм
+                розвитку.
+              </p>
+            </div>
+            <div className="hat-info ">
+              <h3 className="uk-card-title">Заголовок2</h3>
+              <p>
+                Різноманітний і багатий досвід подальший розвиток різних форм
+                діяльності в значній мірі обумовлює створення моделі розвитку.
+              </p>
+            </div>
+            <div className="hat-info">
+              <h3 className="uk-card-title">Заголовок3</h3>
+              <p>
+                З іншого боку склалася структура організації вимагають від нас
+                аналізу форм розвитку.
+              </p>
+            </div>
           </div>
         </div>
         <video
@@ -31,9 +58,9 @@ export default (props: any) => {
           uk-cover="true"
         ></video>
       </div>
-      <div className="main-blocs uk-padding-small">
+      <div className="main-blocs uk-padding-small" uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300" >
         <div
-          className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s  uk-margin-large"
+          className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin-large"
           uk-grid=""
         >
           <div className="uk-card-media-left uk-cover-container">

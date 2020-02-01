@@ -4,32 +4,50 @@
   .overlay {
     background-color: rgba(0, 0, 0, 0.301);
     text-align: center;
-    width: 100%;
-    padding-bottom: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    img {
+    grid-template-rows: 6fr 2fr;
+    padding: 0;
+    .main-overlay-content {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       justify-items: center;
       align-items: center;
+      img {
+        justify-items: center;
+        align-items: center;
+      }
+      .text {
+        justify-items: center;
+        align-items: center;
+        h2 {
+          font-size: 30px;
+          color: $global-alternative-color;
+          margin: 5px;
+        }
+        h1 {
+          font-size: 50px;
+          color: $global-alternative-color;
+          margin: 5px;
+        }
+        p {
+          color: #B8F781;
+          margin: 5px;
+        }
+      }
     }
-    .text {
-      justify-items: center;
-      align-items: center;
-      h2 {
-        font-size: 30px;
-        color: $global-alternative-color;
-        margin: 5px;
-      }
-      h1 {
-        font-size: 50px;
-        color: $global-alternative-color;
-        margin: 5px;
-      }
-      p {
-        color: $global-alternative-color;
-        margin: 5px;
+    .hat-button {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      .hat-info {
+        justify-self: center;
+        max-width: 300px;
+        h3 {
+          color: $global-link-color;
+        }
+        p {
+          color: #B8F781;
+        }
       }
     }
   }
@@ -38,30 +56,28 @@
     justify-self: center;
     align-items: center;
     padding-top: 100px;
-    .main-bloc {
-      width: 1000px;
-      display: grid;
-      justify-self: center;
-      align-items: center;
-      padding: 30px;
-    }
   }
 }
 
 @media screen and (max-width: 640px) {
   .main {
     .overlay {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-    img {
-      width: 100px;
-    }
-    h2 {
-      font-size: 20px;
-    }
-    h1 {
-      font-size: 30px;
+      grid-template-rows: 1fr;
+      .main-overlay-content {
+        grid-template-columns: 1fr;
+        img {
+          width: 200px;
+        }
+        h2 {
+          font-size: 10px;
+        }
+        h1 {
+          font-size: 15px;
+        }
+      }
+      .hat-button {
+        display: none;
+      }
     }
   }
 }
