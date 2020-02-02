@@ -58,7 +58,10 @@ export default (props: any) => {
           uk-cover="true"
         ></video>
       </div>
-      <div className="main-blocs uk-padding-small" uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300" >
+      <div
+        className="main-blocs uk-padding-small"
+        uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300"
+      >
         <div
           className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin-large"
           uk-grid=""

@@ -29,7 +29,7 @@ export default (props: {
             </div>
           </NavLink>
         )}
-        <ul className="uk-nav uk-nav-default">
+        <ul className="uk-nav uk-nav-default nav">
           <li className="uk-nav-divider"></li>
           <li>
             <NavLink exact to="/">

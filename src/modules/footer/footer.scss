@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+.footer {
+  height: 160px;
+  height: 200px;
+  background: linear-gradient(
+      0deg,
+      rgba(144, 245, 237, 0.185) 0%,
+      rgba(255, 253, 120, 0.144) 99%
+    ),
+    url("./img.png");
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  .footer-top {
+    padding: 10px;
+    h4 {
+      margin: 0;
+    }
+  }
+  .footer-button {
+    display: grid;
+    align-items: center;
+    justify-self: center;
+    .footer-icons {
+      display: grid;
+      align-items: center;
+      justify-self: center;
+    }
+    .footer-link {
+      color: rgba(29, 63, 117, 0.897);
+    }
+    .footer-text-links {
+      a {
+        padding: 5px;
+      }
+    }
+  }
+}
