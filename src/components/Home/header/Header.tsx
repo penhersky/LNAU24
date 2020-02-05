@@ -9,6 +9,8 @@ import {Loading} from "../../../fragments";
 import {USER_DATA_NAV_BAR} from "../../../type/authorizedUser";
 import {SET_HEADER_USER_DATA} from "../../../constants/headerUserData";
 
+import img from "./headerImg.png";
+
 import "./header.scss";
 
 export default (props: any) => {
@@ -56,6 +58,14 @@ export default (props: any) => {
               exact
               to="/"
             >
+              <img
+                data-src={img}
+                width="45"
+                height="50"
+                alt=""
+                uk-img=""
+                className="header-logo"
+              ></img>
               LNAU24
             </NavLink>
           </div>

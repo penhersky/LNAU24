@@ -121,6 +121,7 @@ export default (props: any) => {
                 <img
                   src="/images/microsoft.png"
                   className="uk-animation-shake"
+                  style={{height: 95}}
                   alt=""
                 />
               </a>

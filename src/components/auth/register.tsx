@@ -40,7 +40,6 @@ export default (props: any) => {
 
   useEffect(() => {
     setInputError("");
-    setResultQuery({error: "eee", message: "ddd"});
     if (data) {
       if (data.startRegister) {
         if (data.startRegister.error) {
@@ -180,7 +179,7 @@ export default (props: any) => {
       </div>
       <div className="information uk-animation-fade">
         <div className="content-auth">
-          <img src="/images/LNAU.jpg" alt="" />
+          <img src="/images/Logo.png" alt="" />
           <h2>LNAU24</h2>
           <p>
             LBAU24 це opensource проект створений для поширення інформації серед

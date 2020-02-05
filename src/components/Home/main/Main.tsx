@@ -19,7 +19,7 @@ export default (props: any) => {
           }}
         >
           <div className="main-overlay-content">
-            <img src="images/logo.png" width="300" alt="" uk-img="true"></img>
+            <img src="images/Logo.png" width="300" alt="" uk-img="true"></img>
             <div className="text">
               <h1>Львівський Національний Аграрний Університет</h1>
               <h2>LNAU24</h2>
