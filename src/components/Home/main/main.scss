@@ -31,7 +31,7 @@
           margin: 5px;
         }
         p {
-          color: #B8F781;
+          color: #b8f781;
           margin: 5px;
         }
       }
@@ -46,7 +46,7 @@
           color: $global-link-color;
         }
         p {
-          color: #B8F781;
+          color: #b8f781;
         }
       }
     }
@@ -55,7 +55,20 @@
     display: grid;
     justify-self: center;
     align-items: center;
+  }
+  .main-button {
+    display: grid;
+    justify-items: center;
     padding-top: 100px;
+    padding-bottom: 100px;
+    .main-button-content {
+      max-width: 1200px;
+      padding: 5px;
+    }
+    .main-slider {
+      max-width: 1200px;
+      padding: 50px;
+    }
   }
 }
 

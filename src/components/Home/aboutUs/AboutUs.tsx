@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./aboutUs.scss";
+import './aboutUs.scss';
 
 export default (props: any) => {
   return (
