@@ -1,7 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import "./loading.scss";
+import './loading.scss';
 
 export default (props: any) => {
-  return <span uk-spinner="ratio: 4.5" className="loading"></span>;
+  return (
+    <span className="loading">
+      <div className="lds-circle">
+        <div>
+          <img src="images/Logo.png" alt="" />
+        </div>
+      </div>
+    </span>
+  );
 };

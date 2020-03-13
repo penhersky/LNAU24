@@ -1,17 +1,17 @@
-import React, {useState, useEffect} from "react";
-import {useQuery} from "@apollo/react-hooks";
-import {NavLink} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import {UserHeader, OffCanvas} from "../../../modules";
-import {Loading} from "../../../fragments";
+import { UserHeader, OffCanvas } from '../../../modules';
+import { Loading } from '../../../fragments';
 
-import {USER_DATA_NAV_BAR} from "../../../type/authorizedUser";
-import {SET_HEADER_USER_DATA} from "../../../constants/headerUserData";
+import { USER_DATA_NAV_BAR } from '../../../type/authorizedUser';
+import { SET_HEADER_USER_DATA } from '../../../constants/headerUserData';
 
-import img from "./headerImg.png";
+import img from './headerImg.png';
 
-import "./header.scss";
+import './header.scss';
 
 export default (props: any) => {
   const [notAuthorized, setNotAuthorized] = useState(true);
@@ -20,9 +20,9 @@ export default (props: any) => {
     id: undefined,
     name: undefined,
     surname: undefined,
-    position: undefined
+    position: undefined,
   });
-  const {data, loading} = useQuery(USER_DATA_NAV_BAR);
+  const { data, loading } = useQuery(USER_DATA_NAV_BAR);
 
   useEffect(() => {
     if (data) {
@@ -33,7 +33,7 @@ export default (props: any) => {
         setNotAuthorized(false);
         dispatch({
           type: SET_HEADER_USER_DATA,
-          ...data.User.getAuthorizedUser
+          ...data.User.getAuthorizedUser,
         });
       }
     }
@@ -48,8 +48,8 @@ export default (props: any) => {
           delay-hide="false"
           uk-navbar="true"
           style={{
-            position: "relative",
-            zIndex: 980
+            position: 'relative',
+            zIndex: 980,
           }}
         >
           <div className="uk-navbar-left">
@@ -107,7 +107,7 @@ export default (props: any) => {
         </nav>
         <nav
           className="uk-navbar uk-navbar-container nav-mobile"
-          style={{position: "relative", zIndex: 980}}
+          style={{ position: 'relative', zIndex: 980 }}
         >
           <div className="uk-navbar-left">
             <span
