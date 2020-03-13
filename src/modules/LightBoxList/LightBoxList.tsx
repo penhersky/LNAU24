@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {LightBox} from '../../fragments';
+import { LightBox } from '../../fragments';
 
-export default (props: {imageList: Array<string>}) => {
+export default (props: { imageList: Array<string> }) => {
   const showItems = (imageList: Array<string>) => {
-    return imageList.map(image => <LightBox imageUrl={image} />);
+    return imageList.map((image) => <LightBox imageUrl={image} />);
   };
   return (
     <div className="light-box-list">

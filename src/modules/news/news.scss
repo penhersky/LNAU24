@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+
+.news-card {
+  color: $global-color;
+  margin: 5px;
+  .news-card-detail {
+    border-top: $global-color solid 1px;
+    max-height: 40px;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: flex-end;
+    #create-news {
+      display: grid;
+      justify-self: flex-end;
+    }
+    #author-news {
+      display: grid;
+      justify-self: center;
+    }
+  }
+  .read-news {
+    display: grid;
+    .images-news {
+      max-width: 50px;
+      justify-self: center;
+    }
+    .read-more {
+      background-color: rgba(255, 255, 255, 0.665);
+      height: 100%;
+      font-size: 20px;
+      text-decoration: none;
+    }
+  }
+}
