@@ -4,7 +4,9 @@ import { LightBox } from '../../fragments';
 
 export default (props: { imageList: Array<string> }) => {
   const showItems = (imageList: Array<string>) => {
-    return imageList.map((image) => <LightBox imageUrl={image} />);
+    return imageList.map((image, index) => (
+      <LightBox imageUrl={image} key={index.toString()} />
+    ));
   };
   return (
     <div className="light-box-list">
@@ -20,13 +22,13 @@ export default (props: { imageList: Array<string> }) => {
         </ul>
         <span
           className="uk-position-center-left uk-position-small uk-hidden-hover"
-          uk-slidenav-previous
+          uk-slidenav-previous="true"
           uk-slider-item="previous"
           uk-icon="icon: chevron-left; ratio: 3.5"
         ></span>
         <span
           className="uk-position-center-right uk-position-small uk-hidden-hover"
-          uk-slidenav-next
+          uk-slidenav-next="true"
           uk-slider-item="next"
           uk-icon="icon: chevron-right; ratio: 3.5"
         ></span>

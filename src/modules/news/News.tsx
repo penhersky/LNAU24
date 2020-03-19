@@ -14,7 +14,7 @@ export default (props: {
 }) => {
   const showImages = (images: Array<string>) => {
     return images.map((image, index) => (
-      <img src={image} alt="" key={index.toString()} />
+      <img src={image} alt="" key={index.toString()} className="image-news" />
     ));
   };
 
@@ -24,8 +24,8 @@ export default (props: {
       <p>{props.body.slice(0, 350)}...</p>
       <div className="uk-inline read-news">
         <NavLink
-          to="/news/more/:id"
-          className="uk-overlay uk-position-center uk-dark read-more uk-button-text"
+          to={`/news/more/${props.id}`}
+          className="uk-overlay uk-position-center uk-dark read-more"
         >
           Переглянути повністю
         </NavLink>
