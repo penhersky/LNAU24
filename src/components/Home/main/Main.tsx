@@ -4,20 +4,20 @@ import first from '../../../image/main/1.jpeg';
 import second from '../../../image/main/2.jpg';
 import third from '../../../image/main/3.jpg';
 
-import {LightBoxList} from '../../../modules';
+import { LightBoxList } from '../../../modules';
 
 import './main.scss';
 
 export default (props: any) => {
   return (
     <div className="main">
-      <div className="video-box uk-cover-container" style={{height: 700}}>
+      <div className="video-box uk-cover-container" style={{ height: 700 }}>
         <div
           className="uk-overlay uk-position-cover overlay"
           style={{
             position: 'relative',
             zIndex: 100,
-            height: '100%'
+            height: '100%',
           }}
         >
           <div className="main-overlay-content">
@@ -185,7 +185,7 @@ export default (props: any) => {
               'http://lnau.edu.ua/lnau/images/stories/newspod03.02.202.jpg',
               'http://lnau.edu.ua/lnau/images/stories/newspod03.02.203.jpg',
               'http://lnau.edu.ua/lnau/images/stories/newspod03.02.208.jpg',
-              'http://lnau.edu.ua/lnau/images/stories/newsekonom17.01.201.jpg'
+              'http://lnau.edu.ua/lnau/images/stories/newsekonom17.01.201.jpg',
             ]}
           />
         </div>

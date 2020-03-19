@@ -58,14 +58,16 @@ export default (props: any) => {
               exact
               to="/"
             >
-              <img
-                data-src={img}
-                width="45"
-                height="50"
-                alt=""
-                uk-img=""
-                className="header-logo"
-              ></img>
+              <div className="logo-logo">
+                <img
+                  data-src={img}
+                  width="45"
+                  height="50"
+                  alt=""
+                  uk-img=""
+                  className="header-logo-img"
+                />
+              </div>
               LNAU24
             </NavLink>
           </div>

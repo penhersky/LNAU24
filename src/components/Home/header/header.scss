@@ -1,7 +1,9 @@
-@import "../../../variables.scss";
+@import '../../../variables.scss';
 
 .header-logo {
-  margin: 5px;
+  .header-logo-img {
+    margin: 5px;
+  }
 }
 
 .nav {

@@ -13,7 +13,9 @@ export default (props: {
   createdAt: string;
 }) => {
   const showImages = (images: Array<string>) => {
-    return images.map((image) => <img src={image} alt="" />);
+    return images.map((image, index) => (
+      <img src={image} alt="" key={index.toString()} />
+    ));
   };
 
   return (
