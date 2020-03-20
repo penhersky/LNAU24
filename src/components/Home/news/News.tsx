@@ -1,13 +1,22 @@
 import React from 'react';
 
 import { NewsCard } from '../../../modules';
-import { Pagination } from '../../../fragments';
+import { Pagination, Search } from '../../../fragments';
 
 import './news.scss';
 
 export default (props: any) => {
+  const searchHandler = (text: String) => {
+    alert(text);
+  };
+
   return (
     <div className="news">
+      <div className="find-news uk-width-2-3@m">
+        <div className="news-search ">
+          <Search submit={searchHandler} />
+        </div>
+      </div>
       <div className="news-list">
         <NewsCard
           id={1}

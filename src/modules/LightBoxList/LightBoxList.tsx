@@ -22,13 +22,13 @@ export default (props: { imageList: Array<string> }) => {
         </ul>
         <span
           className="uk-position-center-left uk-position-small uk-hidden-hover"
-          uk-slidenav-previous="true"
+          uk-slidenav-previous={true}
           uk-slider-item="previous"
           uk-icon="icon: chevron-left; ratio: 3.5"
         ></span>
         <span
           className="uk-position-center-right uk-position-small uk-hidden-hover"
-          uk-slidenav-next="true"
+          uk-slidenav-next={true}
           uk-slider-item="next"
           uk-icon="icon: chevron-right; ratio: 3.5"
         ></span>
