@@ -1,27 +1,27 @@
-import React from "react";
-import {Switch, Route} from "react-router-dom";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import Header from "./header/Header";
-import Main from "./main/Main";
+import Header from './header/Header';
+import Main from './main/Main';
 
-import AboutUs from "./aboutUs/AboutUs";
-import Entrant from "./entrant/Entrant";
-import Faculties from "./faculties/Faculties";
-import News from "./news/News";
+import AboutUs from './aboutUs/AboutUs';
+import Entrant from './entrant/Entrant';
+import Faculties from './faculties/Faculties';
+import News from './news/News';
 
-import {Footer} from "../../modules";
-import {ToTop} from "../../fragments";
-import {Page404} from "../";
+import { Footer } from '../../modules';
+import { ToTop } from '../../fragments';
+import { Page404 } from '../';
 
-import "./home.scss";
+import './home.scss';
 
 export default (props: any) => {
   return (
     <div className="home">
       <Switch>
-        <Route exact path="/" component={Header} />
         <Route
-          path={["/about-us", "/news", "/faculties", "/to-the-entrant"]}
+          exact
+          path={['/', '/about-us', '/news', '/faculties', '/to-the-entrant']}
           component={Header}
         />
       </Switch>
@@ -34,7 +34,11 @@ export default (props: any) => {
         <Route path="*" component={Page404} />
       </Switch>
       <ToTop />
-      <Footer />
+      <Route
+        exact
+        path={['/', '/about-us', '/news', '/faculties', '/to-the-entrant']}
+        component={Footer}
+      />
     </div>
   );
 };

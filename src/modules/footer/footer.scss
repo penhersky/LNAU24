@@ -1,17 +1,15 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 .footer {
-  height: 160px;
-  height: 200px;
-  background: linear-gradient(
-      0deg,
-      rgba(144, 245, 237, 0.185) 0%,
-      rgba(255, 253, 120, 0.144) 99%
-    ),
-    url("./img.png");
-  background-size: cover;
+  min-height: 200px;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  background: linear-gradient(
+    0deg,
+    rgba(28, 222, 41, 0.3083372997636554) 32%,
+    rgba(28, 222, 41, 0.04503197763480393) 100%
+  );
+  border-bottom: solid 5px $global-border;
   .footer-top {
     padding: 10px;
     h4 {
@@ -27,12 +25,26 @@
       align-items: center;
       justify-self: center;
     }
-    .footer-link {
-      color: rgba(29, 63, 117, 0.897);
-    }
+
     .footer-text-links {
+      display: flex;
+      flex-flow: wrap row;
+      justify-content: space-around;
+      padding: 5px;
       a {
         padding: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 962px) {
+  .footer {
+    grid-template-rows: 1fr 3fr;
+    .footer-button {
+      .footer-text-links {
+        flex-flow: column wrap;
+        text-align: center;
       }
     }
   }
